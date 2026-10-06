@@ -1,13 +1,12 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>To Abhijith, With Love ❤️</title>
+    <title>To Abhijith ❤️ | Five Months of Us</title>
 
-    <!-- Bootstrap 5 -->
+    <!-- Bootstrap -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -15,14 +14,14 @@
 
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet"
     >
 
     <style>
 
         /* =====================================================
-           GENERAL
+           BASIC SETTINGS
         ===================================================== */
 
         * {
@@ -35,23 +34,410 @@
 
         body {
             margin: 0;
+            background: #faf6f3;
+            color: #38252a;
             font-family: 'Poppins', sans-serif;
-            background: #fff5f7;
-            color: #4a2630;
             overflow-x: hidden;
         }
 
         /* =====================================================
-           HERO
+           COLORS
+        ===================================================== */
+
+        :root {
+            --wine: #7d3046;
+            --rose: #b75b72;
+            --soft-rose: #e9c4cc;
+            --cream: #faf6f3;
+            --dark: #38252a;
+            --muted: #806b70;
+            --white: #ffffff;
+        }
+
+        /* =====================================================
+           HERO SECTION
         ===================================================== */
 
         .hero {
             min-height: 100vh;
+            position: relative;
+            overflow: hidden;
 
             background:
-                radial-gradient(circle at top left, rgba(255,255,255,0.8), transparent 35%),
-                radial-gradient(circle at bottom right, rgba(255,190,205,0.4), transparent 35%),
-                linear-gradient(135deg, #fff0f3, #ffd9e1, #fff7f8);
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(233,196,204,0.5),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(233,196,204,0.4),
+                    transparent 30%
+                ),
+                var(--cream);
+        }
+
+        .hero .container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-text {
+            padding: 70px 20px;
+            animation: fadeUp 1.3s ease;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 12px;
+            color: var(--rose);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(70px, 9vw, 125px);
+            color: var(--wine);
+            line-height: 0.9;
+            margin: 0;
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(28px, 4vw, 45px);
+            font-weight: 500;
+            margin-top: 25px;
+            color: var(--dark);
+        }
+
+        .hero-description {
+            max-width: 520px;
+            margin-top: 25px;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 2;
+        }
+
+        .signature {
+            font-family: 'Great Vibes', cursive;
+            font-size: 38px;
+            color: var(--rose);
+            margin-top: 25px;
+        }
+
+        /* =====================================================
+           HERO PHOTO
+        ===================================================== */
+
+        .hero-photo-wrapper {
+            position: relative;
+            padding: 50px;
+            animation: fadeIn 1.6s ease;
+        }
+
+        .hero-photo-frame {
+            position: relative;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .hero-photo {
+            width: 100%;
+            height: 650px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 250px 250px 20px 20px;
+
+            box-shadow:
+                0 25px 70px rgba(90, 40, 55, 0.25);
+        }
+
+        .photo-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--soft-rose);
+            border-radius: 250px 250px 20px 20px;
+            top: 20px;
+            left: 20px;
+            z-index: -1;
+        }
+
+        /* =====================================================
+           SCROLL DOWN
+        ===================================================== */
+
+        .scroll-down {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: var(--rose);
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: var(--rose);
+            margin: 10px auto 0;
+        }
+
+        /* =====================================================
+           SECTION SETTINGS
+        ===================================================== */
+
+        section {
+            padding: 110px 20px;
+        }
+
+        .section-label {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--rose);
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Great Vibes', cursive;
+            color: var(--wine);
+            font-size: 65px;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            max-width: 600px;
+            text-align: center;
+            margin: 0 auto 60px;
+            color: var(--muted);
+            line-height: 1.9;
+            font-size: 14px;
+        }
+
+        /* =====================================================
+           INTRO SECTION
+        ===================================================== */
+
+        .intro-section {
+            background: #ffffff;
+        }
+
+        .intro-box {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .intro-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(28px, 4vw, 45px);
+            line-height: 1.4;
+            color: var(--dark);
+        }
+
+        .heart {
+            color: var(--rose);
+            display: inline-block;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        /* =====================================================
+           LOVE LETTER
+        ===================================================== */
+
+        .letter-section {
+            background: #f7ecef;
+        }
+
+        .letter-card {
+            max-width: 850px;
+            margin: auto;
+            padding: 65px;
+
+            background: #fffdfc;
+
+            position: relative;
+
+            box-shadow:
+                0 20px 60px rgba(90, 40, 55, 0.10);
+        }
+
+        .letter-card::before {
+            content: "♥";
+            position: absolute;
+            right: 35px;
+            top: 25px;
+            font-size: 20px;
+            color: var(--soft-rose);
+        }
+
+        .letter-heading {
+            font-family: 'Great Vibes', cursive;
+            font-size: 42px;
+            color: var(--wine);
+            margin-bottom: 30px;
+        }
+
+        .letter-card p {
+            color: #6e595e;
+            line-height: 2.1;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .letter-signature {
+            font-family: 'Great Vibes', cursive;
+            color: var(--rose);
+            font-size: 40px;
+            margin-top: 35px;
+        }
+
+        /* =====================================================
+           PHOTO MEMORY SECTION
+        ===================================================== */
+
+        .gallery-section {
+            background: #ffffff;
+        }
+
+        .gallery-card {
+            position: relative;
+            overflow: hidden;
+            height: 650px;
+            background: #eee;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            padding: 35px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(35, 15, 22, 0.85)
+                );
+
+            color: white;
+        }
+
+        .gallery-overlay h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 35px;
+            margin: 0;
+        }
+
+        .gallery-overlay p {
+            font-size: 13px;
+            margin-top: 8px;
+            color: #f5e9ec;
+        }
+
+        /* =====================================================
+           FIVE MONTHS
+        ===================================================== */
+
+        .months-section {
+            background: #faf6f3;
+        }
+
+        .month-card {
+            background: white;
+            padding: 35px 25px;
+            text-align: center;
+            height: 100%;
+
+            border: 1px solid #ead8dd;
+
+            transition: 0.4s ease;
+        }
+
+        .month-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(90,40,55,0.12);
+        }
+
+        .month-number {
+            font-family: 'Great Vibes', cursive;
+            font-size: 50px;
+            color: var(--rose);
+        }
+
+        .month-card h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 25px;
+            color: var(--wine);
+            margin-bottom: 15px;
+        }
+
+        .month-card p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        /* =====================================================
+           REASONS SECTION
+        ===================================================== */
+
+        .reasons-section {
+            background: #ffffff;
+        }
+
+        .reason {
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        .reason-icon {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .reason h5 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--wine);
+            font-size: 27px;
+        }
+
+        .reason p {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.8;
+            max-width: 280px;
+            margin: auto;
+        }
+
+        /* =====================================================
+           FINAL SECTION
+        ===================================================== */
+
+        .final-section {
+            min-height: 90vh;
 
             display: flex;
             align-items: center;
@@ -59,115 +445,66 @@
 
             text-align: center;
 
-            position: relative;
-            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255,255,255,0.1),
+                    transparent 40%
+                ),
+                #63283b;
+
+            color: white;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 5;
-            padding: 30px;
-            animation: fadeUp 1.5s ease;
+        .final-heart {
+            font-size: 65px;
+            animation: heartbeat 1.5s infinite;
+            margin-bottom: 20px;
         }
 
-        .small-title {
-            font-size: 14px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: #a64d67;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
+        .final-title {
             font-family: 'Great Vibes', cursive;
-            font-size: 100px;
-            color: #c44569;
+            font-size: clamp(65px, 9vw, 110px);
+            line-height: 1;
             margin: 0;
         }
 
-        .hero h2 {
-            font-size: 28px;
-            font-weight: 500;
-            color: #642b3a;
-            margin-top: 10px;
-        }
-
-        .hero-description {
-            max-width: 650px;
-            margin: 25px auto;
-            font-size: 16px;
-            line-height: 1.9;
-            color: #704653;
-        }
-
-        .from-name {
-            font-family: 'Great Vibes', cursive;
-            font-size: 38px;
-            color: #c44569;
+        .final-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 35px;
             margin-top: 20px;
         }
 
-        .heart {
-            color: #e63967;
-            display: inline-block;
-            animation: heartbeat 1.5s infinite;
+        .final-message {
+            max-width: 650px;
+            margin: 30px auto;
+            color: #ead7dc;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .final-signature {
+            font-family: 'Great Vibes', cursive;
+            font-size: 42px;
+            margin-top: 35px;
         }
 
         /* =====================================================
-           FLOATING HEARTS
+           FOOTER
         ===================================================== */
 
-        .floating-heart {
-            position: absolute;
-            color: rgba(214, 70, 105, 0.20);
-            font-size: 35px;
-            animation: float 7s infinite ease-in-out;
-            pointer-events: none;
+        footer {
+            background: #321820;
+            color: #dcbfc7;
+            text-align: center;
+            padding: 25px;
+            font-size: 11px;
+            letter-spacing: 1px;
         }
 
-        .heart1 {
-            left: 8%;
-            top: 20%;
-        }
-
-        .heart2 {
-            right: 10%;
-            top: 25%;
-            animation-delay: 2s;
-            font-size: 45px;
-        }
-
-        .heart3 {
-            left: 18%;
-            bottom: 15%;
-            animation-delay: 4s;
-        }
-
-        .heart4 {
-            right: 20%;
-            bottom: 18%;
-            animation-delay: 1s;
-            font-size: 25px;
-        }
-
-        .heart5 {
-            left: 50%;
-            top: 12%;
-            animation-delay: 3s;
-            font-size: 20px;
-        }
-
-        @keyframes float {
-
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-35px) rotate(10deg);
-            }
-
-        }
+        /* =====================================================
+           ANIMATIONS
+        ===================================================== */
 
         @keyframes heartbeat {
 
@@ -176,7 +513,7 @@
             }
 
             50% {
-                transform: scale(1.25);
+                transform: scale(1.2);
             }
 
         }
@@ -185,7 +522,7 @@
 
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
 
             to {
@@ -195,351 +532,16 @@
 
         }
 
-        /* =====================================================
-           GENERAL SECTIONS
-        ===================================================== */
+        @keyframes fadeIn {
 
-        section {
-            padding: 100px 20px;
-        }
+            from {
+                opacity: 0;
+            }
 
-        .section-title {
-            font-family: 'Great Vibes', cursive;
-            font-size: 58px;
-            color: #c44569;
-            text-align: center;
-            margin-bottom: 10px;
-        }
+            to {
+                opacity: 1;
+            }
 
-        .section-subtitle {
-            text-align: center;
-            color: #80606a;
-            margin-bottom: 55px;
-        }
-
-        /* =====================================================
-           LOVE LETTER
-        ===================================================== */
-
-        .letter-section {
-            background: #ffffff;
-        }
-
-        .love-letter {
-            max-width: 850px;
-            margin: auto;
-
-            background:
-                linear-gradient(
-                    rgba(255, 248, 250, 0.95),
-                    rgba(255, 248, 250, 0.95)
-                );
-
-            padding: 55px;
-
-            border-radius: 20px;
-
-            box-shadow:
-                0 15px 45px rgba(150, 50, 80, 0.12);
-
-            border: 1px solid #f6d7df;
-
-            position: relative;
-        }
-
-        .love-letter::before {
-            content: "♥";
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 25px;
-            color: #e9a1b2;
-        }
-
-        .love-letter p {
-            font-size: 16px;
-            line-height: 2;
-            color: #63404b;
-        }
-
-        .letter-opening {
-            font-family: 'Great Vibes', cursive;
-            font-size: 35px;
-            color: #c44569;
-        }
-
-        .signature {
-            font-family: 'Great Vibes', cursive;
-            font-size: 40px;
-            color: #c44569;
-            margin-top: 30px;
-        }
-
-        /* =====================================================
-           MEMORIES
-        ===================================================== */
-
-        .memories-section {
-            background: #fff5f7;
-        }
-
-        .memory-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-
-            box-shadow:
-                0 8px 25px rgba(120, 50, 70, 0.10);
-
-            height: 100%;
-
-            transition: all 0.4s ease;
-        }
-
-        .memory-card:hover {
-            transform: translateY(-10px);
-
-            box-shadow:
-                0 18px 40px rgba(120, 50, 70, 0.18);
-        }
-
-        .memory-image {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .memory-image img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .memory-card:hover img {
-            transform: scale(1.06);
-        }
-
-        .memory-content {
-            padding: 25px;
-            text-align: center;
-        }
-
-        .memory-content h5 {
-            color: #c44569;
-            font-weight: 600;
-        }
-
-        .memory-content p {
-            color: #765761;
-            font-size: 14px;
-            line-height: 1.7;
-        }
-
-        /* =====================================================
-           TIMELINE
-        ===================================================== */
-
-        .timeline-section {
-            background: #fff0f3;
-        }
-
-        .timeline {
-            max-width: 850px;
-            margin: auto;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-
-            left: 50%;
-            top: 0;
-            bottom: 0;
-
-            width: 2px;
-
-            background: #e7a4b4;
-
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            position: relative;
-
-            width: 50%;
-
-            padding: 20px 40px;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-            text-align: right;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-dot {
-            position: absolute;
-
-            top: 27px;
-
-            width: 18px;
-            height: 18px;
-
-            background: #c44569;
-
-            border-radius: 50%;
-
-            border: 4px solid #fff0f3;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-dot {
-            right: -9px;
-        }
-
-        .timeline-item:nth-child(even) .timeline-dot {
-            left: -9px;
-        }
-
-        .timeline-content {
-            background: white;
-
-            padding: 25px;
-
-            border-radius: 18px;
-
-            box-shadow:
-                0 5px 20px rgba(120, 50, 70, 0.10);
-        }
-
-        .timeline-content h5 {
-            color: #c44569;
-            font-weight: 600;
-        }
-
-        .timeline-content p {
-            margin: 0;
-            font-size: 14px;
-            line-height: 1.7;
-            color: #765761;
-        }
-
-        /* =====================================================
-           REASONS
-        ===================================================== */
-
-        .reasons-section {
-            background: #ffffff;
-        }
-
-        .reason-box {
-            padding: 35px 25px;
-            text-align: center;
-
-            border-radius: 20px;
-
-            background: #fff7f9;
-
-            height: 100%;
-
-            transition: 0.3s;
-        }
-
-        .reason-box:hover {
-            transform: translateY(-7px);
-            background: #ffeef2;
-        }
-
-        .reason-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .reason-box h5 {
-            color: #c44569;
-            margin-bottom: 12px;
-        }
-
-        .reason-box p {
-            font-size: 14px;
-            color: #765761;
-            line-height: 1.7;
-        }
-
-        /* =====================================================
-           FINAL SECTION
-        ===================================================== */
-
-        .final-section {
-            min-height: 75vh;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(255,255,255,0.12),
-                    transparent 40%
-                ),
-                linear-gradient(
-                    135deg,
-                    #c44569,
-                    #8e354f
-                );
-
-            color: white;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            position: relative;
-            overflow: hidden;
-        }
-
-        .final-section h2 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 80px;
-        }
-
-        .final-section p {
-            max-width: 650px;
-            margin: 25px auto;
-
-            line-height: 1.9;
-            font-size: 17px;
-
-            color: #ffe9ee;
-        }
-
-        .big-heart {
-            font-size: 75px;
-            animation: heartbeat 1.5s infinite;
-            margin-bottom: 10px;
-        }
-
-        .final-name {
-            font-family: 'Great Vibes', cursive;
-            font-size: 42px;
-            margin-top: 25px;
-        }
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
-
-        footer {
-            background: #55202f;
-            color: #f8dce3;
-
-            text-align: center;
-
-            padding: 25px;
-
-            font-size: 14px;
         }
 
         /* =====================================================
@@ -548,70 +550,55 @@
 
         @media (max-width: 768px) {
 
-            .hero h1 {
-                font-size: 65px;
+            section {
+                padding: 80px 18px;
             }
 
-            .hero h2 {
-                font-size: 22px;
+            .hero .container {
+                min-height: auto;
+            }
+
+            .hero-text {
+                text-align: center;
+                padding: 80px 15px 30px;
             }
 
             .hero-description {
-                font-size: 14px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
-            .from-name {
-                font-size: 32px;
+            .hero-photo-wrapper {
+                padding: 30px 25px 90px;
+            }
+
+            .hero-photo {
+                height: 500px;
+            }
+
+            .photo-decoration {
+                top: 15px;
+                left: 15px;
             }
 
             .section-title {
-                font-size: 46px;
+                font-size: 50px;
             }
 
-            .love-letter {
-                padding: 35px 22px;
+            .letter-card {
+                padding: 40px 25px;
             }
 
-            .love-letter p {
-                font-size: 14px;
-                line-height: 1.9;
-            }
-
-            /* Mobile Timeline */
-
-            .timeline::before {
-                left: 10px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                left: 0 !important;
-
-                text-align: left !important;
-
-                padding-left: 40px;
-                padding-right: 10px;
-            }
-
-            .timeline-item .timeline-dot {
-                left: 1px !important;
-                right: auto !important;
+            .gallery-card {
+                height: 550px;
             }
 
             .final-section {
-                padding: 80px 20px;
+                min-height: 75vh;
             }
 
-            .final-section h2 {
-                font-size: 55px;
-            }
-
-            .final-section p {
-                font-size: 14px;
-            }
-
-            .big-heart {
-                font-size: 60px;
+            .final-subtitle {
+                font-size: 27px;
             }
 
         }
@@ -620,58 +607,126 @@
 
 </head>
 
-
 <body>
 
 
     <!-- =====================================================
-         HERO SECTION
+         HERO
     ===================================================== -->
 
     <section class="hero">
 
-        <!-- Floating Hearts -->
+        <div class="container">
 
-        <div class="floating-heart heart1">♥</div>
-        <div class="floating-heart heart2">♥</div>
-        <div class="floating-heart heart3">♥</div>
-        <div class="floating-heart heart4">♥</div>
-        <div class="floating-heart heart5">♥</div>
+            <div class="row align-items-center w-100">
+
+                <!-- TEXT -->
+
+                <div class="col-lg-6">
+
+                    <div class="hero-text">
+
+                        <div class="eyebrow">
+                            A little something for you
+                        </div>
+
+                        <h1 class="hero-title">
+                            To Abhijith
+                        </h1>
+
+                        <div class="hero-subtitle">
+                            Five months of us
+                            <span class="heart">♥</span>
+                        </div>
+
+                        <p class="hero-description">
+
+                            Five months may not sound like a very
+                            long time, but somehow, you've become
+                            such a beautiful part of my life.
+
+                            <br><br>
+
+                            So I made this little corner of the
+                            internet just for you.
+
+                        </p>
+
+                        <div class="signature">
+                            With love, Arathi
+                        </div>
+
+                    </div>
+
+                </div>
 
 
-        <div class="hero-content">
+                <!-- PHOTO -->
 
-            <div class="small-title">
-                A little something for you
+                <div class="col-lg-6">
+
+                    <div class="hero-photo-wrapper">
+
+                        <div class="hero-photo-frame">
+
+                            <img
+                                src="1000009446.jpg"
+                                alt="Abhijith and Arathi"
+                                class="hero-photo"
+                            >
+
+                            <div class="photo-decoration"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
-
-            <h1>
-                To Abhijith
-            </h1>
+        </div>
 
 
-            <h2>
-                5 Months of Us
-                <span class="heart">♥</span>
-            </h2>
+        <div class="scroll-down">
+
+            Scroll
+
+            <div class="scroll-line"></div>
+
+        </div>
+
+    </section>
 
 
-            <p class="hero-description">
 
-                Five months may sound like a short time,
-                but with you, it feels like we've already
-                created a lifetime of beautiful memories.
+    <!-- =====================================================
+         INTRO
+    ===================================================== -->
 
-                <br><br>
+    <section class="intro-section">
 
-                Happy 5th Month Anniversary, my love. ❤️
+        <div class="container">
 
-            </p>
+            <div class="intro-box">
 
+                <div class="section-label">
+                    Five months
+                </div>
 
-            <div class="from-name">
-                With love, Arathi
+                <h2 class="section-title">
+                    Just You & Me
+                </h2>
+
+                <p class="intro-quote">
+
+                    "Out of all the people in this world,
+                    I'm really glad that I found you."
+
+                    <span class="heart">♥</span>
+
+                </p>
+
             </div>
 
         </div>
@@ -688,18 +743,23 @@
 
         <div class="container">
 
+            <div class="section-label">
+                From my heart
+            </div>
+
             <h2 class="section-title">
                 A Letter For You
             </h2>
 
-            <p class="section-subtitle">
-                Something I want you to know...
+            <p class="section-description">
+                There are some things that are easier to write
+                than to say.
             </p>
 
 
-            <div class="love-letter">
+            <div class="letter-card">
 
-                <div class="letter-opening">
+                <div class="letter-heading">
                     My love,
                 </div>
 
@@ -710,49 +770,48 @@
 
 
                 <p>
-                    These five months have given me so many
-                    beautiful memories, silly conversations,
-                    laughs, little arguments and moments that
-                    I will always keep close to my heart.
+                    Five months with you has been filled with
+                    so many little moments that I never want
+                    to forget — the conversations, the laughs,
+                    the silly things, and even the moments when
+                    we don't agree.
                 </p>
 
 
                 <p>
-                    Thank you for being a part of my life,
-                    for listening to me, understanding me,
-                    and simply being there.
-                    I may not always know how to express
-                    everything I feel, but I hope you know
-                    how much you mean to me.
+                    Thank you for being there for me and for
+                    becoming someone I can share my happiness,
+                    thoughts, worries and random moments with.
                 </p>
 
 
                 <p>
-                    I love the little things about us —
-                    our conversations, our random moments,
-                    the way we make each other laugh,
-                    and even the silly arguments that somehow
-                    become memories later.
+                    I don't need everything to be perfect.
+                    I just want something real — the kind of
+                    relationship where we continue to understand
+                    each other, grow together and make memories
+                    along the way.
                 </p>
 
 
                 <p>
-                    I don't know exactly what the future holds,
-                    but I know that I want to keep making
-                    memories with you, laughing with you,
-                    growing with you and choosing you.
+                    These five months are only one small chapter
+                    of our story, but it's already a chapter
+                    that means so much to me.
                 </p>
 
 
                 <p>
-                    Five months down...
-                    and hopefully, a lifetime to go. ❤️
+                    And if I could choose again,
+                    I'd still choose you.
                 </p>
 
 
-                <div class="signature">
+                <div class="letter-signature">
+
                     With all my love,<br>
                     Arathi ❤️
+
                 </div>
 
             </div>
@@ -764,50 +823,49 @@
 
 
     <!-- =====================================================
-         MEMORIES
+         PHOTO MEMORIES
     ===================================================== -->
 
-    <section class="memories-section">
+    <section class="gallery-section">
 
         <div class="container">
 
+            <div class="section-label">
+                Our memories
+            </div>
+
             <h2 class="section-title">
-                Our Memories
+                Moments I Love
             </h2>
 
-            <p class="section-subtitle">
-                Some moments that mean a little extra to me ❤️
+            <p class="section-description">
+                Two pictures, countless feelings.
+                Some moments are worth keeping forever.
             </p>
 
 
             <div class="row g-4">
 
 
-                <!-- MEMORY 1 -->
+                <!-- PHOTO 1 -->
 
-                <div class="col-md-4">
+                <div class="col-lg-6">
 
-                    <div class="memory-card">
+                    <div class="gallery-card">
 
-                        <div class="memory-image">
+                        <img
+                            src="1000009446.jpg"
+                            alt="Our beautiful memory"
+                        >
 
-                            <img
-                                src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=80"
-                                alt="Our Beginning"
-                            >
+                        <div class="gallery-overlay">
 
-                        </div>
-
-
-                        <div class="memory-content">
-
-                            <h5>
-                                Our Beginning ❤️
-                            </h5>
+                            <h3>
+                                One of my favourite memories
+                            </h3>
 
                             <p>
-                                The beginning of something
-                                that became so special to me.
+                                Just us. Exactly the way I like it.
                             </p>
 
                         </div>
@@ -817,68 +875,25 @@
                 </div>
 
 
+                <!-- PHOTO 2 -->
 
-                <!-- MEMORY 2 -->
+                <div class="col-lg-6">
 
-                <div class="col-md-4">
+                    <div class="gallery-card">
 
-                    <div class="memory-card">
+                        <img
+                            src="1000010929.jpg"
+                            alt="Another beautiful memory"
+                        >
 
-                        <div class="memory-image">
+                        <div class="gallery-overlay">
 
-                            <img
-                                src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80"
-                                alt="Our Little Moments"
-                            >
-
-                        </div>
-
-
-                        <div class="memory-content">
-
-                            <h5>
-                                Our Little Moments
-                            </h5>
+                            <h3>
+                                Another little moment
+                            </h3>
 
                             <p>
-                                The random conversations,
-                                laughs and little memories
-                                that mean so much.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- MEMORY 3 -->
-
-                <div class="col-md-4">
-
-                    <div class="memory-card">
-
-                        <div class="memory-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80"
-                                alt="Still Choosing You"
-                            >
-
-                        </div>
-
-
-                        <div class="memory-content">
-
-                            <h5>
-                                Still Choosing You ❤️
-                            </h5>
-
-                            <p>
-                                Five months later,
-                                and you're still my favorite person.
+                                A picture that makes me smile every time.
                             </p>
 
                         </div>
@@ -897,112 +912,119 @@
 
 
     <!-- =====================================================
-         OUR JOURNEY
+         FIVE MONTHS
     ===================================================== -->
 
-    <section class="timeline-section">
+    <section class="months-section">
 
         <div class="container">
 
+            <div class="section-label">
+                Our journey
+            </div>
+
             <h2 class="section-title">
-                Our Little Journey
+                Five Months
             </h2>
 
-            <p class="section-subtitle">
-                Five months of us...
+            <p class="section-description">
+                Five little chapters of something that became
+                very special to me.
             </p>
 
 
-            <div class="timeline">
+            <div class="row g-4">
 
 
                 <!-- MONTH 1 -->
 
-                <div class="timeline-item">
+                <div class="col-md-6 col-lg">
 
-                    <div class="timeline-dot"></div>
+                    <div class="month-card">
 
-                    <div class="timeline-content">
+                        <div class="month-number">
+                            01
+                        </div>
 
                         <h5>
-                            Month 1 ❤️
+                            The Beginning
                         </h5>
 
                         <p>
-                            The beginning of our story.
-                            Everything was new and exciting,
-                            and somehow you became someone
-                            very special to me.
+                            The month when our story began
+                            and everything was new.
                         </p>
 
                     </div>
 
                 </div>
-
 
 
                 <!-- MONTH 2 -->
 
-                <div class="timeline-item">
+                <div class="col-md-6 col-lg">
 
-                    <div class="timeline-dot"></div>
+                    <div class="month-card">
 
-                    <div class="timeline-content">
+                        <div class="month-number">
+                            02
+                        </div>
 
                         <h5>
-                            Month 2
+                            Getting Closer
                         </h5>
 
                         <p>
-                            Slowly getting to know each other
-                            and creating our own little world.
+                            Learning more about each other
+                            and creating our own moments.
                         </p>
 
                     </div>
 
                 </div>
-
 
 
                 <!-- MONTH 3 -->
 
-                <div class="timeline-item">
+                <div class="col-md-6 col-lg">
 
-                    <div class="timeline-dot"></div>
+                    <div class="month-card">
 
-                    <div class="timeline-content">
+                        <div class="month-number">
+                            03
+                        </div>
 
                         <h5>
-                            Month 3 ❤️
+                            More Memories
                         </h5>
 
                         <p>
-                            More memories, more laughs,
-                            more conversations and getting
-                            even closer.
+                            More conversations, more laughs,
+                            and more reasons to smile.
                         </p>
 
                     </div>
 
                 </div>
-
 
 
                 <!-- MONTH 4 -->
 
-                <div class="timeline-item">
+                <div class="col-md-6 col-lg">
 
-                    <div class="timeline-dot"></div>
+                    <div class="month-card">
 
-                    <div class="timeline-content">
+                        <div class="month-number">
+                            04
+                        </div>
 
                         <h5>
-                            Month 4
+                            Understanding Us
                         </h5>
 
                         <p>
-                            Understanding each other a little
-                            more and growing together.
+                            Growing together and understanding
+                            each other a little more.
                         </p>
 
                     </div>
@@ -1010,22 +1032,23 @@
                 </div>
 
 
-
                 <!-- MONTH 5 -->
 
-                <div class="timeline-item">
+                <div class="col-md-12 col-lg">
 
-                    <div class="timeline-dot"></div>
+                    <div class="month-card">
 
-                    <div class="timeline-content">
+                        <div class="month-number">
+                            05
+                        </div>
 
                         <h5>
-                            Month 5 ❤️
+                            Still Us ❤️
                         </h5>
 
                         <p>
-                            Here we are — five months together,
-                            and I'm still grateful that it's you.
+                            Five months later, and I'm still
+                            happy that it's you.
                         </p>
 
                     </div>
@@ -1042,28 +1065,33 @@
 
 
     <!-- =====================================================
-         REASONS I LOVE YOU
+         REASONS
     ===================================================== -->
 
     <section class="reasons-section">
 
         <div class="container">
 
+            <div class="section-label">
+                Just because
+            </div>
+
             <h2 class="section-title">
-                Why You Are Special
+                Why You Matter
             </h2>
 
-            <p class="section-subtitle">
-                Just a few of the many reasons...
+            <p class="section-description">
+                I could probably write a hundred reasons,
+                but here are just a few.
             </p>
 
 
-            <div class="row g-4">
+            <div class="row">
 
 
                 <div class="col-md-4">
 
-                    <div class="reason-box">
+                    <div class="reason">
 
                         <div class="reason-icon">
                             🫶🏻
@@ -1076,7 +1104,7 @@
                         <p>
                             Thank you for understanding the
                             little things about me and accepting
-                            me exactly as I am.
+                            me as I am.
                         </p>
 
                     </div>
@@ -1084,10 +1112,9 @@
                 </div>
 
 
-
                 <div class="col-md-4">
 
-                    <div class="reason-box">
+                    <div class="reason">
 
                         <div class="reason-icon">
                             😊
@@ -1098,9 +1125,8 @@
                         </h5>
 
                         <p>
-                            Even an ordinary day becomes
-                            a little better when I get to
-                            spend it with you.
+                            Somehow even an ordinary day feels
+                            better when you're a part of it.
                         </p>
 
                     </div>
@@ -1108,23 +1134,21 @@
                 </div>
 
 
-
                 <div class="col-md-4">
 
-                    <div class="reason-box">
+                    <div class="reason">
 
                         <div class="reason-icon">
                             ❤️
                         </div>
 
                         <h5>
-                            You Are You
+                            You're You
                         </h5>
 
                         <p>
-                            And honestly, that's my favorite
-                            thing about you. I wouldn't want
-                            you any other way.
+                            And that's probably my favourite
+                            thing about you.
                         </p>
 
                     </div>
@@ -1141,45 +1165,52 @@
 
 
     <!-- =====================================================
-         FINAL MESSAGE
+         FINAL
     ===================================================== -->
 
     <section class="final-section">
 
-        <div>
+        <div class="container">
 
-            <div class="big-heart">
+            <div class="final-heart">
                 ❤️
             </div>
 
-
-            <h2>
-                Happy 5 Months,
-                Abhijith
+            <h2 class="final-title">
+                Happy 5 Months
             </h2>
 
+            <div class="final-subtitle">
+                Abhijith
+            </div>
 
-            <p>
-                Thank you for being one of the most beautiful
-                parts of my life.
+
+            <p class="final-message">
+
+                Five months down.
+
+                <br>
+
+                So many memories made.
+
+                <br>
+
+                And hopefully, many more beautiful
+                chapters waiting for us.
 
                 <br><br>
 
-                Here's to all the memories we've made,
-                all the laughs we've shared,
-                and all the beautiful moments
-                still waiting for us.
+                Thank you for being you,
+                and thank you for being a part of my life.
+
             </p>
 
 
-            <h4>
-                I love you. ❤️
-            </h4>
+            <div class="final-signature">
 
+                Forever with love,<br>
+                Arathi ❤️
 
-            <div class="final-name">
-                With all my love,<br>
-                Arathi
             </div>
 
         </div>
@@ -1194,13 +1225,14 @@
 
     <footer>
 
-        Made with ❤️ by Arathi, for Abhijith.
+        Made especially for Abhijith ❤️
+        <br>
+        From Arathi
 
     </footer>
 
 
-
-    <!-- Bootstrap JavaScript -->
+    <!-- Bootstrap JS -->
 
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
@@ -1208,4 +1240,3 @@
 
 </body>
 </html>
-```
